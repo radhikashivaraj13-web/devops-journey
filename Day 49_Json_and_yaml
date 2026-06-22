@@ -1,0 +1,24 @@
+"""import json
+server={"name":"web-server-01","ip":"192.168.1.10","port": 8080,"status":"running"}
+json_data=json.dumps(server,indent=4)
+print(json_data)
+with open("server.json","w") as f:
+    json.dump(server,f,indent=4)
+with open("server.json","r") as f:
+    data=json.load(f)
+    print("\nLoaded from file:")
+    print(data["name"])
+    print(data["ip"])
+    print(data["port"])
+    print(data["status"])"""
+import yaml
+server={"name":"web-server-01","ip":"192.168.1.10","port": 8080,"status":"running"}
+with open("server.yaml","w") as f:
+    yaml.dump(server,f)
+with open("server.yaml","r") as f:
+    data=yaml.safe_load(f)
+    print("\nLoaded from file:")
+    print(data["name"])
+    print(data["ip"])
+    print(data["port"])
+    print(data["status"])
